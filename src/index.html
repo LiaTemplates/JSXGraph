@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSXGraph</title>
+
+    <script type="module" src="index.ts"></script>
+  </head>
+  <body>
+    <jsx-graph
+      boundingbox="[-20,-20,20,20]"
+      axis="true"
+      showcopyright="false"
+    >
+    var s = board.create('slider', [[4,7],[8,7],[1,1,1.5]], {name:'S', strokeColor:'black', fillColor:'white'});
+  var f = [function(){return (s.Value()*4.5).toFixed(2);},
+                     function(){return (s.Value()*(-1)).toFixed(2);},
+                     function(){return (s.Value()*3).toFixed(2);},
+                     function(){return (s.Value()*2).toFixed(2);},
+                     function(){return (s.Value()*(-0.5)).toFixed(2);},
+                     function(){return (s.Value()*5.5).toFixed(2);},
+                     function(){return (s.Value()*2.5).toFixed(2);},
+                     function(){return (s.Value()*(-0.75)).toFixed(2);},
+                     function(){return (s.Value()*3.5).toFixed(2);},
+                     function(){return (s.Value()*2).toFixed(2);},
+                     function(){return (s.Value()*(-1.25)).toFixed(2);}
+                     ];
+  var chart = board.create('chart', [f],
+                                            {chartStyle:'bar',width:0.8,labels:f,
+                                             colorArray:['#8E1B77','#BE1679','#DC1765','#DA2130','#DB311B','#DF4917','#E36317','#E87F1A',
+                                                         '#F1B112','#FCF302','#C1E212']});
+
+  var dataArr = [4,1,3,2,5,6.5,1.5,2,0.5,1.5,-1];
+  var chart2 = board.create('chart', dataArr, {chartStyle:'line,point'});
+  chart2[0].setAttribute('strokeColor:black','strokeWidth:2pt');
+  for(var i=0; i< 11; i++) {
+           chart2[1][i].setAttribute({strokeColor:'black',fillColor:'white',face:'[]', size:4, strokeWidth:'2pt'});
+  }
+  board.unsuspendUpdate();
+    </jsx-graph>
+  </body>
+</html>

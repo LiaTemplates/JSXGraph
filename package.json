@@ -1,0 +1,25 @@
+{
+  "name": "jsxgraph",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "build": "npx parcel build --no-scope-hoist src/index.ts",
+    "watch": "npx parcel serve src/index.html --open"
+  },
+  "devDependencies": {
+    "caniuse-lite": "^1.0.30001718",
+    "parcel": "^2.9.0",
+    "process": "^0.11.10",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "jsxgraph": "^1.11.1"
+  },
+  "browserslist": [
+    "cover 95%",
+    "not dead"
+  ]
+}
